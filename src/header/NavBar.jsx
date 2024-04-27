@@ -34,7 +34,7 @@ const NavBar = () => {
                     color: isActive ? "white" : "",
                 };
             }}>My List</NavLink></li>}
-            
+
 
         </>
     return (
@@ -46,9 +46,9 @@ const NavBar = () => {
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         {navLink}
-                        { user &&
+                        {user &&
 
-                        <li><Link className=" bg-red-500 px-4 text-white text-center" onClick={logOut}>Logout</Link></li>
+                            <li><Link className=" bg-red-500 px-4 text-white text-center" onClick={logOut}>Logout</Link></li>
                         }
                     </ul>
                 </div>
@@ -66,12 +66,19 @@ const NavBar = () => {
                             <div className="w-10 rounded-full">
                                 <img alt="Tailwind CSS Navbar component" src={user?.photoURL || 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'} />
                             </div>
-                            <span className="text-black bg-gray-100 p-3 rounded-lg absolute right-14 opacity-0 group-hover:opacity-70">{user.displayName || 'Unknown'}</span>
+                            <span className="text-black bg-gray-100 p-3 rounded-lg absolute top-6 right-12 opacity-0 group-hover:opacity-70">
+                                <div className="flex flex-col gap-2">
+                                {user.displayName || 'Unknown'}
+                                <Link className="bg-red-500 p-2 text-white rounded-md" onClick={logOut}>Logout</Link>
+                                </div>
+                            </span>
                         </div>
                     </div>
-                    <Link className="btn btn-error ml-2 text-white hidden lg:flex" onClick={logOut}>Logout</Link>
                 </>
-                    : <Link to='/login' className="btn bg-[#23BE0A] text-white">Login</Link>
+                    : <div className="flex gap-2">
+                        <Link to='/login' className="btn bg-[#23BE0A] text-white">Login</Link>
+                        <Link to='/register' className="btn bg-[#5154f4] text-white">Register</Link>
+                    </div>
                 }
             </div>
         </div>

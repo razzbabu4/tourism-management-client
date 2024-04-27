@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import {toast} from 'react-toastify'
 
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useAuth()
+    const { createUser, updateUserProfile } = useAuth();
+    const navigate = useNavigate()
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
@@ -32,15 +33,10 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 updateUserProfile(name, photo)
-                // .then(() => {
-                //     navigate('/')
-                //     toast.success('Successfully registered')
-                //     setUser({
-                //         displayName: name,
-                //         photoURL: photo,
-                //     })
-                //     setUpdate(false)
-                // });
+                .then(() => {
+                    navigate('/')
+                    toast.success('Successfully registered')
+                });
             })
             .catch((error) => {
                 const errorCode = error.code;

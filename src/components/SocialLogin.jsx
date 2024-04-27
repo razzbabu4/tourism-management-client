@@ -1,5 +1,5 @@
 import useAuth from "../hooks/useAuth";
-import {useLocation, useNavigate} from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
@@ -13,7 +13,7 @@ const SocialLogin = () => {
     const handleSocialMedia = (socialMedia) => {
         socialMedia()
             .then(result => {
-                if(result.user){
+                if (result.user) {
                     navigate(location?.state || '/')
                 }
             })
@@ -23,13 +23,12 @@ const SocialLogin = () => {
     }
     return (
         <>
-            <div className="divider my-2">Continue with</div>
-            <div className="flex flex-col gap-6 p-6 justify-around">
-                <button onClick={()=>handleSocialMedia(googleLogin)} className="btn btn-outline">
-                   <FcGoogle className="text-xl"></FcGoogle> Google
+            <div className="flex justify-center space-x-4">
+                <button onClick={() => handleSocialMedia(googleLogin)} aria-label="Log in with Google" className="p-3 rounded-sm">
+                    <FcGoogle className="text-2xl"></FcGoogle>
                 </button>
-                <button onClick={()=>handleSocialMedia(githubLogin)} className="btn btn-outline">
-                    <FaGithub className="text-xl"></FaGithub> GitHub
+                <button onClick={() => handleSocialMedia(githubLogin)} aria-label="Log in with GitHub" className="p-3 rounded-sm">
+                    <FaGithub className="text-2xl"></FaGithub>
                 </button>
             </div>
         </>

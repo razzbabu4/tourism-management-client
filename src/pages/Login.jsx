@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import {toast} from 'react-toastify'
 import SocialLogin from "../components/SocialLogin";
@@ -6,6 +6,8 @@ import SocialLogin from "../components/SocialLogin";
 
 const Login = () => {
     const {logIn, user} = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate()
 
     const handleLogin = e => {
         e.preventDefault();
@@ -21,7 +23,7 @@ const Login = () => {
         logIn(email, password)
         .then(() => {
             toast.success('Successfully login')
-            // navigate(location?.state ? location.state : '/')
+            navigate(location?.state ? location.state : '/')
         })
         .catch(() => {
             toast.warning('Please provide a registered user info')

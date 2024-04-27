@@ -5,7 +5,8 @@ import {toast} from 'react-toastify'
 
 const Register = () => {
     const { createUser, updateUserProfile } = useAuth();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;

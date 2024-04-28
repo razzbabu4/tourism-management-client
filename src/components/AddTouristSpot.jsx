@@ -15,11 +15,11 @@ const AddTouristSpot = () => {
         const travel_time = form.travel_time.value;
         const totalVisitorsPerYear = form.totalVisitorsPerYear.value;
         const description = form.description.value;
-        // const userEmail = form.userEmail.value;
-        // const userName = form.userName.value;
+        const userEmail = form.userEmail.value;
+        const userName = form.userName.value;
 
 
-        const newTouristSpot = { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description }
+        const newTouristSpot = { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description, userEmail, userName };
         console.log(newTouristSpot)
 
 
@@ -27,7 +27,7 @@ const AddTouristSpot = () => {
         fetch('http://localhost:5000/touristSpots', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newTouristSpot)
         })
@@ -40,7 +40,7 @@ const AddTouristSpot = () => {
                         text: 'Tourist Spot added successfully',
                         icon: 'success',
                         confirmButtonText: 'OK'
-                      })
+                    })
                 }
             })
 
@@ -100,15 +100,15 @@ const AddTouristSpot = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">User Email</span>
-                        </label>
-                        <input type="text" name="userEmail" placeholder="User Email" defaultValue={user?.email} className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
                             <span className="label-text">User Name</span>
                         </label>
                         <input type="text" name="userName" placeholder="User Name" defaultValue={user?.displayName} className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">User Email</span>
+                        </label>
+                        <input type="text" name="userEmail" placeholder="User Email" defaultValue={user?.email} className="input input-bordered" />
                     </div>
                     <div className="form-control md:col-span-2">
                         <label className="label">

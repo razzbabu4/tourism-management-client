@@ -5,6 +5,8 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import AddTouristSpot from "../components/AddTouristSpot";
+import MyList from "../components/MyList";
 
 const router = createBrowserRouter([
     {
@@ -31,13 +33,13 @@ const router = createBrowserRouter([
             {
                 path: '/addTouristSpot',
                 element: <PrivateRoute>
-                    <Register></Register>
+                    <AddTouristSpot></AddTouristSpot>
                 </PrivateRoute>
             },
             {
                 path: '/myList',
                 element: <PrivateRoute>
-                    <Register></Register>
+                    <MyList></MyList>
                 </PrivateRoute>
             },
         ]

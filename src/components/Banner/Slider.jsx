@@ -26,13 +26,13 @@ const Slider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><img src="https://i.ibb.co/88WHd79/single-family-home-image.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/n6px8YR/shundarban.jpg" alt="" /></SwiperSlide>
 
-        <SwiperSlide><img src="https://i.ibb.co/c8ZZd9J/town-house.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/bgHmVyg/bangkok.jpg" alt="" /></SwiperSlide>
 
-        <SwiperSlide><img src="https://i.ibb.co/mvnzJYL/apartment-image.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/mzVSjwx/bali.jpg" alt="" /></SwiperSlide>
 
-        <SwiperSlide><img src="https://i.ibb.co/B65dNt4/vacation-rental-image.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/KjqPFcY/halongbay.jpg" alt="" /></SwiperSlide>
 
       </Swiper>
     </div>

@@ -9,7 +9,7 @@ const SingleTouristSpot = ({ touristSpot }) => {
             <div className="relative">
                 <figure><img className="h-72 w-full" src={image} alt="house" /></figure>
                 <div className="absolute text-white bg-black font-medium p-3 rounded-tr-xl bg-opacity-50 bottom-0 left-0 flex items-center gap-2">
-                 {seasonality}
+                    {seasonality}
                 </div>
                 <div className="absolute text-white bg-black font-medium p-3 rounded-tl-xl bg-opacity-50 bottom-0 right-0 flex items-center gap-2">
                     <CiDollar className="text-lg font-semibold"></CiDollar> {average_cost}
@@ -17,8 +17,10 @@ const SingleTouristSpot = ({ touristSpot }) => {
             </div>
             <div className="card-body">
                 <h2 className="card-title">{tourists_spot_name}</h2>
-                <p className="font-bold text-green-700">{travel_time}</p>
-                <p className="">{totalVisitorsPerYear} Visitors </p>
+                <div className="flex justify-between">
+                    <span className="font-bold text-green-700">{travel_time}</span>
+                    <span className="">{totalVisitorsPerYear} Visitors </span>
+                </div>
                 <div className="card-actions">
                     <Link to={`/viewDetails/${_id}`} className="btn w-full btn-outline bg-[#23BE0A] text-white">View Details</Link>
                 </div>

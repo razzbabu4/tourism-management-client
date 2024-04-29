@@ -48,7 +48,7 @@ const NavBar = () => {
                         {navLink}
                         {user &&
 
-                            <li><Link className=" bg-red-500 px-4 text-white text-center" onClick={logOut}>Logout</Link></li>
+                            <li><Link className=" bg-red-300 px-4 text-white text-center" onClick={logOut}>Logout</Link></li>
                         }
                     </ul>
                 </div>
@@ -66,7 +66,7 @@ const NavBar = () => {
                             <div className="w-10 rounded-full">
                                 <img alt="Tailwind CSS Navbar component" src={user?.photoURL || 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'} />
                             </div>
-                            <span className="text-black bg-gray-100 p-3 rounded-lg absolute top-6 right-12 opacity-0 group-hover:opacity-70">
+                            <span className="text-black bg-gray-100 p-3 rounded-lg absolute right-12 opacity-0 group-hover:opacity-70">
                                 <div className="flex flex-col gap-2">
                                 {user.displayName || 'Unknown'}
                                 <Link className="bg-red-500 p-2 text-white rounded-md" onClick={logOut}>Logout</Link>

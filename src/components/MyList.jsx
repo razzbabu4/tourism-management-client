@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from 'sweetalert2'
+import { Link } from "react-router-dom";
 
 const MyList = () => {
     const { user } = useAuth();
@@ -84,7 +85,7 @@ const MyList = () => {
                                 <td><span>$</span>{spot.average_cost}</td>
                                 <th>
                                     <div className="flex items-center gap-4">
-                                        <button className="btn btn-ghost btn-xs text-green-500 btn-outline">Update</button>
+                                        <Link to={`/updateSpot/${spot._id}`} className="btn btn-ghost btn-xs text-green-500 btn-outline">Update</Link>
                                         <button onClick={()=>handleDelete(spot._id)} className="btn btn-ghost btn-xs text-red-500 btn-outline">Delete</button>
                                     </div>
                                 </th>

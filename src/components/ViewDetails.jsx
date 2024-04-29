@@ -1,5 +1,4 @@
 import { useLoaderData, useParams } from 'react-router-dom';
-import useAuth from '../hooks/useAuth';
 import { BiWorld } from "react-icons/bi";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { TiWeatherPartlySunny } from "react-icons/ti";
@@ -9,7 +8,6 @@ import { FaPeopleGroup } from "react-icons/fa6";
 
 const ViewDetails = () => {
     const allTouristSpots = useLoaderData();
-    const { user } = useAuth();
     const { id } = useParams();
     const singleTouristSpot = allTouristSpots.find(touristSpot => touristSpot._id === id);
     console.log(singleTouristSpot)
@@ -18,11 +16,10 @@ const ViewDetails = () => {
         <div className='max-w-7xl mx-auto my-16'>
             <div className="flex flex-col max-w-7xl p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
                 <div className="flex space-x-4">
-                    <img alt="" src={user?.photoURL} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500 dark:bg-gray-500" />
+                    <img alt="" src={image} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500 dark:bg-gray-500" />
                     <div className="flex flex-col space-y-1">
                         <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{userName}</a>
                         <span className="text-xs text-gray-400 dark:text-gray-600">{userEmail}</span>
-                        <span className="text-xs text-gray-400 dark:text-gray-600">{user?.metadata?.lastSignInTime}</span>
                     </div>
                 </div>
                 <div>

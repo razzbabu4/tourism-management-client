@@ -1,8 +1,11 @@
-# React + Vite
+# Wander Wisely
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- User-friendly Interface: Ensure intuitive navigation and visually appealing design to enhance user experience.
+- Comprehensive Destination Information: Provide detailed descriptions, photos, and maps for tourist attractions, accommodations, and activities.
+- Booking System: Implement a secure and efficient booking platform for accommodations, tours, and transportation.
+- Feedback and Reviews: Enable visitors to leave reviews and ratings, fostering trust and transparency within the community.
+- Security : Implement strong encryption, secure payment processing, and regular security audits to safeguard user data and ensure privacy
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## live-link: https://tourism-management-bd08e.web.app
+- Category : Southeast Asia

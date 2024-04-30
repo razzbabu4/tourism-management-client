@@ -21,7 +21,7 @@ const UpdateTouristSpot = () => {
         const updateTouristSpot = { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description };
         console.log(updateTouristSpot)
 
-        fetch(`http://localhost:5000/touristSpots/${_id}`, {
+        fetch(`https://tourism-management-server-silk.vercel.app/touristSpots/${_id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updateTouristSpot)

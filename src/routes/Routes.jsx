@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: ()=> fetch('http://localhost:5000/touristSpots')
+                loader: ()=> fetch('https://tourism-management-server-silk.vercel.app/touristSpots')
             },
             {
                 path: '/login',
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/allTouristSpot',
                 element: <AllTouristSpots></AllTouristSpots>,
-                loader: ()=> fetch('http://localhost:5000/touristSpots')
+                loader: ()=> fetch('https://tourism-management-server-silk.vercel.app/touristSpots')
             },
             {
                 path: '/addTouristSpot',
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path: '/updateSpot/:id',
                 element: <UpdateTouristSpot></UpdateTouristSpot>,
-                loader: ({params})=> fetch(`http://localhost:5000/touristSpots/${params.id}`)
+                loader: ({params})=> fetch(`https://tourism-management-server-silk.vercel.app/touristSpots/${params.id}`)
             },
             {
                 path: '/myList',
@@ -56,12 +56,12 @@ const router = createBrowserRouter([
             {
                 path: '/viewDetails/:id',
                 element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5000/touristSpots')
+                loader: ()=> fetch('https://tourism-management-server-silk.vercel.app/touristSpots')
             },
             {
                 path: '/countries',
                 element: <AllCountry></AllCountry>,
-                // loader: ()=> fetch('http://localhost:5000/country')
+                // loader: ()=> fetch('https://tourism-management-server-silk.vercel.app/country')
             }
         ]
     },

@@ -9,7 +9,7 @@ const AllCountry = () => {
     const [countries, setCountries] = useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/country`)
+        fetch(`https://tourism-management-server-silk.vercel.app/country`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

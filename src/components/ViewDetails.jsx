@@ -5,6 +5,7 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 import { MdOutlinePriceChange } from "react-icons/md";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { FaPeopleGroup } from "react-icons/fa6";
+import { Tooltip } from 'react-tooltip'
 
 const ViewDetails = () => {
     const allTouristSpots = useLoaderData();
@@ -29,12 +30,15 @@ const ViewDetails = () => {
                 </div>
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 text-center '>
 
-                    <p className='btn'><BiWorld></BiWorld>{country_Name}</p>
-                    <p className='btn'><FaMapLocationDot/>{location}</p>
-                    <p className='btn'><MdOutlinePriceChange/>{average_cost}</p>
-                    <p className='btn'><TiWeatherPartlySunny/>{seasonality}</p>
-                    <p className='btn'><IoCalendarNumberOutline/>{travel_time}</p>
-                    <p className='btn'><FaPeopleGroup/>{totalVisitorsPerYear} <span>Visitors (per year)</span></p>
+                    
+                    <p data-tooltip-id="my-tooltip" data-tooltip-content="Country" className='btn'><BiWorld></BiWorld>{country_Name}</p>
+                    
+                    <Tooltip id="my-tooltip" />
+                    <p data-tooltip-id="my-tooltip" data-tooltip-content="Location" className='btn'><FaMapLocationDot />{location}</p>
+                    <p data-tooltip-id="my-tooltip" data-tooltip-content="Average Cost" className='btn'><MdOutlinePriceChange />{average_cost}</p>
+                    <p data-tooltip-id="my-tooltip" data-tooltip-content="Season" className='btn'><TiWeatherPartlySunny />{seasonality}</p>
+                    <p data-tooltip-id="my-tooltip" data-tooltip-content="Travel Duration" className='btn'><IoCalendarNumberOutline />{travel_time}</p>
+                    <p data-tooltip-id="my-tooltip" data-tooltip-content="Visitors Per Year" className='btn'><FaPeopleGroup />{totalVisitorsPerYear} <span>Visitors (per year)</span></p>
 
                 </div>
             </div>

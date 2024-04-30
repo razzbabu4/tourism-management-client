@@ -6,14 +6,19 @@ const ErrorPage = () => {
     console.error(error);
 
     return (
-        <div className="flex flex-col gap-10 justify-center items-center min-h-screen">
-            <h1 className="text-7xl">Error</h1>
-            <p>Sorry, an unexpected error has occurred.</p>
-            <p>
-                <i>{error.statusText || error.message}</i>
-            </p>
-            <Link to='/' className="border p-4 rounded-lg bg-green-200">Go Back to Home</Link>
-        </div>
+        <section className="flex items-center h-screen p-16 bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+            <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+                <div className="max-w-md text-center">
+                    <h2 className="mb-8 font-extrabold text-9xl text-gray-600 dark:text-gray-400">
+                        <span className="sr-only">Error</span>404
+                    </h2>
+                    <p className="text-2xl font-semibold md:text-3xl">Sorry, we could not find this page.</p>
+                    <p className="mt-4 mb-8 text-gray-400 dark:text-gray-600"><i>{error.statusText || error.message}</i></p>
+                    <Link to='/' className="border p-4 rounded-lg bg-green-200">Go Back to Home</Link>
+
+                </div>
+            </div>
+        </section>
     );
 }
 

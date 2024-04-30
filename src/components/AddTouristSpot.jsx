@@ -1,5 +1,7 @@
 import useAuth from "../hooks/useAuth";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { Fade } from "react-awesome-reveal";
+
 
 const AddTouristSpot = () => {
     const { user } = useAuth()
@@ -47,7 +49,9 @@ const AddTouristSpot = () => {
     }
     return (
         <div className="max-w-7xl mx-auto bg-gray-50 p-4 md:p-10 rounded-md">
-            <h1 className="text-center text-3xl">Add New Tourist Spot</h1>
+            <Fade>
+                <h1 className="text-center text-3xl">Add New Tourist Spot</h1>
+            </Fade>
             <form onSubmit={handleAddTouristSpot} className="card-body">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="form-control">

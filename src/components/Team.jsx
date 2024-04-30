@@ -1,3 +1,4 @@
+import { Bounce } from "react-awesome-reveal";
 
 
 const Team = () => {
@@ -5,7 +6,9 @@ const Team = () => {
         <div className="max-w-7xl mx-auto my-6">
             <section className="py-6 bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
                 <div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
-                    <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">Our team</h1>
+                    <Bounce>
+                        <h1 className="text-3xl font-bold leading-none text-center sm:text-4xl">Our team</h1>
+                    </Bounce>
                     <p className="max-w-2xl text-center text-gray-400 dark:text-gray-600">At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur quam natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!</p>
                     <div className="flex flex-row flex-wrap-reverse justify-center">
                         <div className="flex flex-col justify-center m-8 text-center">

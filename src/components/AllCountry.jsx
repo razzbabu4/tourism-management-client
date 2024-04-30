@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import SingleCountry from './SingleCountry';
 import { useEffect, useState } from 'react';
+import { Bounce } from 'react-awesome-reveal';
 
 const AllCountry = () => {
     // const countries = useLoaderData()
@@ -20,9 +21,11 @@ const AllCountry = () => {
     return (
         <div className='max-w-7xl mx-auto md:my-16'>
             <Link to=''>
-                <h1 className='text-center text-4xl font-semibold'>Countries</h1>
+                <Bounce>
+                    <h1 className='text-center text-4xl font-semibold'>Countries</h1>
+                </Bounce>
                 <div className="max-w-40 mx-auto border border-[#23BE0A] mt-4"></div>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 my-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6'>
                     {
                         countries.map(country => <SingleCountry key={country._id} country={country}></SingleCountry>)
                     }

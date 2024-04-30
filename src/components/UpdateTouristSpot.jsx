@@ -1,9 +1,10 @@
+import { Bounce } from 'react-awesome-reveal';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const UpdateTouristSpot = () => {
     const touristSpot = useLoaderData();
-    const {_id, image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description } = touristSpot
+    const { _id, image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description } = touristSpot
     const handleAddTouristSpot = e => {
         e.preventDefault();
         const form = e.target;
@@ -35,13 +36,15 @@ const UpdateTouristSpot = () => {
                         text: 'Updated successfully',
                         icon: 'success',
                         confirmButtonText: 'OK'
-                      })
+                    })
                 }
             })
     }
     return (
         <div className="max-w-7xl mx-auto bg-gray-50 p-4 md:p-10 rounded-md">
-            <h1 className="text-center text-3xl">Update Tourist Spot</h1>
+            <Bounce>
+                <h1 className="text-center text-3xl">Update Tourist Spot</h1>
+            </Bounce>
             <form onSubmit={handleAddTouristSpot} className="card-body">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="form-control">

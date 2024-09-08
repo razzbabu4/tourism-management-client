@@ -4,6 +4,7 @@ import { Bounce } from 'react-awesome-reveal';
 
 const TouristSpots = () => {
     const touristSpots = useLoaderData();
+    console.log(touristSpots)
     return (
         <div className='max-w-7xl mx-auto md:my-16'>
             <Bounce>

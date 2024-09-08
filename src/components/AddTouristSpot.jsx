@@ -26,7 +26,7 @@ const AddTouristSpot = () => {
 
 
         // send data to server
-        fetch('https://tourism-management-server-silk.vercel.app/touristSpots', {
+        fetch('http://localhost:5000/touristSpots', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

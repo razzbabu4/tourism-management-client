@@ -1,10 +1,14 @@
 import { Bounce } from 'react-awesome-reveal';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const UpdateTouristSpot = () => {
     const touristSpot = useLoaderData();
-    const { _id, image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description } = touristSpot
+    const { id } = useParams();
+    const singleTouristSpot = touristSpot.find(spot => spot._id === id);
+    // console.log(singleTouristSpot)
+    const { _id, image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description } = singleTouristSpot;
+
     const handleAddTouristSpot = e => {
         e.preventDefault();
         const form = e.target;
@@ -18,11 +22,10 @@ const UpdateTouristSpot = () => {
         const totalVisitorsPerYear = form.totalVisitorsPerYear.value;
         const description = form.description.value;
 
-
         const updateTouristSpot = { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description };
         console.log(updateTouristSpot)
 
-        fetch(`https://tourism-management-server-silk.vercel.app/touristSpots/${_id}`, {
+        fetch(`http://localhost:5000/touristSpots/${_id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updateTouristSpot)

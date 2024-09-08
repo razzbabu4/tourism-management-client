@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const SingleCountry = ({country}) => {
-    const {image, country_Name, description} = country;
+    const {_id, image, country_Name, description} = country;
     return (
-        <div>
-            <div className="card w-full bg-base-100 shadow-xl image-full">
+        <Link to={`/specificCountry/${_id}`}>
+            <div className="card w-full h-full bg-base-100 shadow-xl image-full">
                 <figure><img src={image} alt="country" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{country_Name}</h2>
@@ -14,7 +15,7 @@ const SingleCountry = ({country}) => {
                     </div> */}
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

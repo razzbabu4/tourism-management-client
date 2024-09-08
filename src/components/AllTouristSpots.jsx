@@ -27,7 +27,7 @@ const AllTouristSpots = () => {
         <div className='max-w-7xl mx-auto md:my-16'>
             <h1 className='text-center text-4xl font-semibold'>All Tourist Spots</h1>
             <div className="max-w-48 mx-auto border border-[#23BE0A] mt-4"></div>
-            <div className="my-2 text-right">
+            <div className="my-2 text-center">
                 <details className="dropdown">
                     <summary className="btn m-1 text-white bg-[#23BE0A]">Sort By <IoIosArrowDown /></summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">

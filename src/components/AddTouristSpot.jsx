@@ -1,10 +1,12 @@
 import useAuth from "../hooks/useAuth";
 import Swal from 'sweetalert2';
 import { Fade } from "react-awesome-reveal";
+import { useNavigate } from "react-router-dom";
 
 
 const AddTouristSpot = () => {
-    const { user } = useAuth()
+    const navigate = useNavigate();
+    const { user } = useAuth();
     const handleAddTouristSpot = e => {
         e.preventDefault();
         const form = e.target;
@@ -26,7 +28,7 @@ const AddTouristSpot = () => {
 
 
         // send data to server
-        fetch('http://localhost:5000/touristSpots', {
+        fetch('https://tourism-management-server-silk.vercel.app/touristSpots', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -43,6 +45,7 @@ const AddTouristSpot = () => {
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
+                    navigate('/myList');
                 }
             })
 
@@ -58,31 +61,31 @@ const AddTouristSpot = () => {
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="text" name="image" placeholder="Photo URL" className="input input-bordered" />
+                        <input type="text" name="image" placeholder="Photo URL" className="input input-bordered" required/>
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Place Name</span>
                         </label>
-                        <input type="text" name="tourists_spot_name" placeholder="Place Name" className="input input-bordered" />
+                        <input type="text" name="tourists_spot_name" placeholder="Place Name" className="input input-bordered" required/>
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Country</span>
                         </label>
-                        <input type="text" name="country_Name" placeholder="Country" className="input input-bordered" />
+                        <input type="text" name="country_Name" placeholder="Country" className="input input-bordered" required/>
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Location</span>
                         </label>
-                        <input type="text" name="location" placeholder="Location Name" className="input input-bordered" />
+                        <input type="text" name="location" placeholder="Location Name" className="input input-bordered" required/>
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Cost</span>
                         </label>
-                        <input type="text" name="average_cost" placeholder="Average Cost" className="input input-bordered" />
+                        <input type="text" name="average_cost" placeholder="Average Cost" className="input input-bordered" required/>
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -94,7 +97,7 @@ const AddTouristSpot = () => {
                         <label className="label">
                             <span className="label-text">Travel Duration</span>
                         </label>
-                        <input type="text" name="travel_time" placeholder="Travel Duration" className="input input-bordered" />
+                        <input type="text" name="travel_time" placeholder="Travel Duration" className="input input-bordered" required/>
                     </div>
                     <div className="form-control">
                         <label className="label">

@@ -25,7 +25,7 @@ const AllTouristSpots = () => {
     
     return (
         <div className='max-w-7xl mx-auto md:my-16'>
-            <h1 className='text-center text-4xl font-semibold'>All Tourist Spots</h1>
+            <h1 className='text-2xl text-center md:text-4xl font-semibold'>All Tourist Spots</h1>
             <div className="max-w-48 mx-auto border border-[#23BE0A] mt-4"></div>
             <div className="my-2 text-center">
                 <details className="dropdown">
@@ -36,7 +36,7 @@ const AllTouristSpots = () => {
                     </ul>
                 </details>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 px-4'>
                 {
                     sortCost.map(touristSpot => <SingleTouristSpot key={touristSpot._id} touristSpot={touristSpot}></SingleTouristSpot>)
                 }

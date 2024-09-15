@@ -11,10 +11,10 @@ const ViewDetails = () => {
     const allTouristSpots = useLoaderData();
     const { id } = useParams();
     const singleTouristSpot = allTouristSpots.find(touristSpot => touristSpot._id === id);
-    console.log(singleTouristSpot)
+    // console.log(singleTouristSpot)
     const { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitorsPerYear, description, userName, userEmail } = singleTouristSpot
     return (
-        <div className='max-w-7xl mx-auto my-16'>
+        <div className='max-w-7xl mx-auto my-8 lg:my-16'>
             <div className="flex flex-col max-w-7xl p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
                 <div className="flex space-x-4">
                     <img alt="" src={image} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500 dark:bg-gray-500" />

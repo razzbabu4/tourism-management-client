@@ -8,7 +8,7 @@ import TouristSpots from "../components/TouristSpots";
 
 const Home = () => {
     return (
-        <div>
+        <div className="p-4">
             <Slider></Slider>
             <div>
                 <TouristSpots></TouristSpots>

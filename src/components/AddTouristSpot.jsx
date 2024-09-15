@@ -53,10 +53,10 @@ const AddTouristSpot = () => {
     return (
         <div className="max-w-7xl mx-auto bg-gray-50 p-4 md:p-10 rounded-md">
             <Fade>
-                <h1 className="text-center text-3xl">Add New Tourist Spot</h1>
+                <h1 className="text-2xl text-center md:text-3xl">Add New Tourist Spot</h1>
             </Fade>
             <form onSubmit={handleAddTouristSpot} className="card-body">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Photo URL</span>
